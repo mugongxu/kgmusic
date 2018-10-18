@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ajax from '../utils';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataInfo: ''
+    };
+  }
+
+  async tick() {
+    const response = await ajax.get('/api/?json=true');
+    console.log(response);
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <a onClick={this.tick.bind(this)}>点击获取信息</a>
       </div>
     );
   }

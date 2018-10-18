@@ -108,7 +108,14 @@
       "react-app"
     ]
   },
-  "devDependencies": {
-    "axios": "^0.18.0"
+  "proxy": {
+    "/api": {
+      "target": "http://m.kugou.com",
+      "changeOrigin": true
+    },
+    "/mobilecdn": {
+      "target": "http://mobilecdn.kugou.com",
+      "changeOrigin": true
+    }
   }
 }
