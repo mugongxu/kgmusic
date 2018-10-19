@@ -109,11 +109,11 @@
     ]
   },
   "proxy": {
-    "/api": {
+    "/": {
       "target": "http://m.kugou.com",
       "changeOrigin": true
     },
-    "/mobilecdn": {
+    "/api": {
       "target": "http://mobilecdn.kugou.com",
       "changeOrigin": true
     }

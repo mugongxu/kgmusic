@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ajax from '../utils';
+import { ajax } from './utils';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   async tick() {
-    const response = await ajax.get('/api/?json=true');
+    const response = await ajax.get('/plist/list/125032?json=true');
     console.log(response);
   }
 

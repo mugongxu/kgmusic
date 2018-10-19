@@ -23,3 +23,5 @@ ajax.interceptors.response.use((response) => {
   Promise.reject(error);
   throw error;
 });
+
+export default ajax;
