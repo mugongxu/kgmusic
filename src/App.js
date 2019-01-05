@@ -50,10 +50,15 @@ class App extends Component {
       bannerList: [...data.banner],
       recommend: [...data.data]
     });
+    this.tick();
   }
 
   async tick() {
-    const response = await ajax.get('/kg/?json=true');
+    const response = await ajax.get('/plist/index&json=true', {
+      params: {
+        page: 1
+      }
+    });
     console.log(response);
   }
 
