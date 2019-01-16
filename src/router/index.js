@@ -24,7 +24,7 @@ const navRouter = [
   }
 ];
 
-const RouteConfig = [
+const routeConfig = [
   {
     path: '/',
     name: '首页',
@@ -70,4 +70,4 @@ const RouteConfig = [
   }
 ];
 
-export { navRouter, RouteConfig };
+export { navRouter, routeConfig };

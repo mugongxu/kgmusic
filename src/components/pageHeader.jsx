@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { navRouter, routeConfig } from '@/router';
+import '@/assets/scss/pageHeader.scss';
 
 const HeaderNav = () => {
   return (
     <div className="header-nav">
+      <ul>
+        {
+          navRouter.map(item => {
+            return (
+              <li key={item.path}>
+                <NavLink
+                  to={item.path}
+                  activeClassName="cur">
+                  {item.name}
+                </NavLink>
+              </li>
+            )
+          })
+        }
+      </ul>
     </div>
   );
 };
 
 const HeaderGoBack = () => {
   return (
-    <div className="header-goback"></div>
+    <div className="header-goback">1</div>
   );
 };
 
@@ -22,9 +39,12 @@ class PageHeader extends Component {
   render() {
     return (
       <div className="header-fixed">
+        <div className="top-hd"></div>
         <BrowserRouter>
-          <Route path="/" exact component={HeaderNav} />
-          <Route path="/ddd" component={HeaderGoBack} />
+          <div>
+            <Route path="/" exact component={HeaderNav} />
+            <Route path="/ddd" component={HeaderGoBack} />
+          </div>
         </BrowserRouter>
       </div>
     );

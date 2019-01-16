@@ -1,0 +1,42 @@
+.header-fixed {
+  .top-hd {
+    width: 100%;
+    padding-top: .0357rem;
+    height: 3.2143rem;
+    line-height: 3rem;
+    background: #2ca2f9;
+    position: relative;
+  }
+  .header-nav {
+    width: 100%;
+    background: #fff;
+    height: 3.2143rem;
+    line-height: 3rem;
+    box-shadow: 0 0.1785rem 0.1785rem 0 #f4f4f4;
+    ul {
+      width: 100%;
+      padding: 0 .7143rem;
+      display: -webkit-box;
+      display: box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      li {
+        width: 20%;
+        text-align: center;
+        box-flex: 1;
+        -webkit-box-flex: 1;
+        a {
+          border-bottom: .2143rem solid #fff;
+          display: block;
+          color: #333;
+          font-size: 1.1429rem;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          &.cur {
+            border-bottom: .2143rem solid #33a3f5;
+          }
+        }
+      }
+    }
+  }
+}
