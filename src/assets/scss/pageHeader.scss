@@ -1,4 +1,8 @@
 .header-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
   .top-hd {
     width: 100%;
     padding-top: .0357rem;
@@ -6,6 +10,25 @@
     line-height: 3rem;
     background: #2ca2f9;
     position: relative;
+    .logo {
+      width: 7.286rem;
+      height: 1.67857rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: .7143rem;
+      background: url(../img/logo-octocat.png) no-repeat;
+      background-size: 100%;
+    }
+    .btn-search {
+      width: 1.2143rem;
+      height: 1.2143rem;
+      background: url(../img/search.png) no-repeat;
+      background-size: 100%;
+      position: absolute;
+      top: 1rem;
+      right: .7143rem;
+      cursor: pointer;
+    }
   }
   .header-nav {
     width: 100%;
@@ -16,15 +39,15 @@
     ul {
       width: 100%;
       padding: 0 .7143rem;
-      display: -webkit-box;
-      display: box;
+      display: -webkit-flex;
+      display: flex;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       li {
         width: 20%;
         text-align: center;
-        box-flex: 1;
-        -webkit-box-flex: 1;
+        flex: 1;
+        -webkit-flex: 1;
         a {
           border-bottom: .2143rem solid #fff;
           display: block;

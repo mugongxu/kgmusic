@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { ajax } from '../../utils';
-import { BrowserRouter, Route } from 'react-router-dom';
 import Swiper from '../../plugins/swiper/custom';
-
-const HomePage = ({ match }) => {
-  return <div>123456</div>;
-};
 
 const SwiperPage = ({ bannerList }) => {
   const opt = {
@@ -49,21 +44,12 @@ class NewSong extends Component {
       bannerList: [...data.banner],
       recommend: [...data.data]
     });
-    this.tick();
-  }
-
-  async tick() {
-    const response = await ajax.get('/plist/index&json=true', {
-      params: {
-        page: 1
-      }
-    });
   }
 
   render() {
     
     return (
-      <div className="App">
+      <div className="new-song-wrapper">
         <div className="card-swipe">
           <SwiperPage bannerList={this.state.bannerList} />
         </div>

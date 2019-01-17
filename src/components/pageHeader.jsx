@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import { navRouter, routeConfig } from '@/router';
 import '@/assets/scss/pageHeader.scss';
 
@@ -12,6 +12,7 @@ const HeaderNav = () => {
             return (
               <li key={item.path}>
                 <NavLink
+                  exact
                   to={item.path}
                   activeClassName="cur">
                   {item.name}
@@ -39,13 +40,20 @@ class PageHeader extends Component {
   render() {
     return (
       <div className="header-fixed">
-        <div className="top-hd"></div>
-        <BrowserRouter>
-          <div>
-            <Route path="/" exact component={HeaderNav} />
-            <Route path="/ddd" component={HeaderGoBack} />
-          </div>
-        </BrowserRouter>
+        <div className="top-hd">
+          <a className="logo" href="/"></a>
+          <div></div>
+          <a className="btn-search" href="/nsearch/index"></a>
+        </div>
+        {
+          routeConfig.map(item => {
+            if (item.model === 1) {
+              return (<Route exact key={item.path} path={item.path} component={HeaderNav}></Route>);
+            } else {
+              return (<Route exact key={item.path} path={item.path} component={HeaderGoBack}></Route>);
+            }
+          })
+        }
       </div>
     );
   }

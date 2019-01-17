@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import PageHeader from '#/pageHeader';
+import MainContainer from '#/mainContainer';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dataInfo: '',
-      bannerList: [],
-      recommend: []
-    };
+    this.state = {};
   }
 
   async componentDidMount() {
@@ -18,9 +16,12 @@ class App extends Component {
   render() {
     
     return (
-      <div className="App">
-        <PageHeader />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <PageHeader />
+          <MainContainer />
+        </div>
+      </BrowserRouter>
     );
   }
 }

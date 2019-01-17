@@ -1,72 +1,72 @@
 /**
  * 路由配置
  */
+import React from 'react';
+import NewSong from '@/views/newSong/index';
+import RankList from '@/views/rank/index';
+
+const HelloWorld = () => {
+  return <div>HelloWorld</div>
+};
+
 const navRouter = [
   {
     path: '/',
     name: '新歌',
-    component: ''
+    component: NewSong,
+    model: 1
   },
   {
-    path: '/rank/list',
+    path: '/nrank/list',
     name: '排行',
-    component: ''
+    component: RankList,
+    model: 1
   },
   {
-    path: '/plist/index',
+    path: '/nplist/index',
     name: '歌单',
-    component: ''
+    component: HelloWorld,
+    model: 1
   },
   {
-    path: '/singer/class',
+    path: '/nsinger/class',
     name: '歌手',
-    component: ''
+    component: HelloWorld,
+    model: 1
   }
 ];
 
 const routeConfig = [
+  ...navRouter,
   {
-    path: '/',
-    name: '首页',
-    component: '',
-    routes: [
-      {
-        path: '/index',
-        name: '歌手',
-        component: '',
-        routes: [...navRouter]
-      },
-      {
-        path: '/rank/info/:id',
-        name: '排行榜',
-        component: ''
-      },
-      {
-        path: '/rank/info/:id',
-        name: '排行榜',
-        component: ''
-      },
-      {
-        path: '/plist/list/:id',
-        name: '歌单',
-        component: ''
-      },
-      {
-        path: '/singer/list/:id',
-        name: '歌手列表',
-        component: ''
-      },
-      {
-        path: '/singer/info/:id',
-        name: '歌手信息',
-        component: ''
-      },
-      {
-        path: '/search/index',
-        name: '搜索',
-        component: ''
-      }
-    ]
+    path: '/nrank/info/:id',
+    name: '排行榜',
+    component: HelloWorld,
+    model: 2
+  },
+  {
+    path: '/nplist/list/:id',
+    name: '歌单',
+    component: HelloWorld,
+    model: 2
+  },
+  {
+    path: '/nsinger/list/:id',
+    name: '歌手列表',
+    component: HelloWorld,
+    model: 2
+  },
+  {
+    path: '/nsinger/info/:id',
+    name: '歌手信息',
+    component: HelloWorld,
+    model: 2
+  },
+  {
+    path: '/nsearch/index',
+    name: '搜索',
+    component: HelloWorld,
+    model: 2
   }
 ];
 
