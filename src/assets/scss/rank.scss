@@ -1,0 +1,46 @@
+.rank-list-wrapper {
+  .rank-img-list li a {
+    display: block;
+    position: relative;
+    margin-left: .7143rem;
+    padding: .7143rem 2.14286rem .7143rem 6.4286rem;
+    border-bottom: 1px solid #e5e5e5;
+    .rank-img-left {
+      position: absolute;
+      top: .7143rem;
+      left: 0;
+      width: 5.3751rem;
+      height: 5.3751rem;
+      img {
+        width: 100%;
+      }
+    }
+    .rank-img-content {
+      min-height: 5.3751rem;
+      line-height: 5.3751rem;
+      display: block;
+      font-size: 1.0714rem;
+      color: #333;
+    }
+    .rank-img-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.14286rem;
+      height: 100%;
+      text-align: center;
+      display: block;
+      .rank-img-arrow {
+        width: .57143rem;
+        height: 1rem;
+        margin-top: -.5rem;
+        position: absolute;
+        top: 50%;
+        right: .7143rem;
+        display: block;
+        background: url(../img/arrow-right.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}

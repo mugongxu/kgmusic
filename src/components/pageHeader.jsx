@@ -41,16 +41,23 @@ class PageHeader extends Component {
     return (
       <div className="header-fixed">
         <div className="top-hd">
-          <a className="logo" href="/"></a>
+          <NavLink
+            to='/'
+            className="logo">
+            <i>酷猫音乐</i>
+          </NavLink>
           <div></div>
-          <a className="btn-search" href="/nsearch/index"></a>
+          <NavLink
+            to='/nsearch/index'
+            className="btn-search">
+          </NavLink>
         </div>
         {
           routeConfig.map(item => {
             if (item.model === 1) {
               return (<Route exact key={item.path} path={item.path} component={HeaderNav}></Route>);
             } else {
-              return (<Route exact key={item.path} path={item.path} component={HeaderGoBack}></Route>);
+              return (<Route key={item.path} path={item.path} component={HeaderGoBack}></Route>);
             }
           })
         }

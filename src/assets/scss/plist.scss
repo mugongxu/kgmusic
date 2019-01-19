@@ -1,0 +1,69 @@
+.plist-list-wrapper {
+  .plist-img-list li a {
+    display: block;
+    position: relative;
+    margin-left: .7143rem;
+    padding: .7143rem 2.14286rem .7143rem 6.4286rem;
+    border-bottom: 1px solid #e5e5e5;
+    .plist-img-left {
+      position: absolute;
+      top: .7143rem;
+      left: 0;
+      width: 5.3751rem;
+      height: 5.3751rem;
+      img {
+        width: 100%;
+      }
+    }
+    .plist-img-content {
+      min-height: 5.3751rem;
+      display: block;
+      font-size: 1.0714rem;
+      color: #333;
+      position: relative;
+      .plist-img-content-first {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+      }
+      .plist-img-content-sub {
+        position: absolute;
+        left: 0;
+        bottom: .2rem;
+        color: #9b9b9b;
+        font-size: .7857rem;
+        .icon-music {
+          width: .7143rem;
+          height: .7143rem;
+          margin-top: .10714rem;
+          margin-right: .2857rem;
+          display: inline-block;
+          background: url(../img/earphone.png) no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+    .plist-img-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.14286rem;
+      height: 100%;
+      text-align: center;
+      display: block;
+      .plist-img-arrow {
+        width: .57143rem;
+        height: 1rem;
+        margin-top: -.5rem;
+        position: absolute;
+        top: 50%;
+        right: .7143rem;
+        display: block;
+        background: url(../img/arrow-right.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}

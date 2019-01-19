@@ -4,6 +4,7 @@
 import React from 'react';
 import NewSong from '@/views/newSong/index';
 import RankList from '@/views/rank/index';
+import PlistList from '@/views/plist/index';
 
 const HelloWorld = () => {
   return <div>HelloWorld</div>
@@ -25,7 +26,7 @@ const navRouter = [
   {
     path: '/nplist/index',
     name: '歌单',
-    component: HelloWorld,
+    component: PlistList,
     model: 1
   },
   {

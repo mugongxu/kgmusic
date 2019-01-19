@@ -13,11 +13,20 @@
     .logo {
       width: 7.286rem;
       height: 1.67857rem;
+      line-height: 1.67857rem;
       display: inline-block;
       vertical-align: middle;
       margin-left: .7143rem;
       background: url(../img/logo-octocat.png) no-repeat;
       background-size: 100%;
+      background-size: contain;
+      cursor: pointer;
+      i {
+        margin-left: 1.8857rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
     }
     .btn-search {
       width: 1.2143rem;

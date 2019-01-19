@@ -9,7 +9,6 @@ class MainContainer extends Component {
     this.state = {...props};
   }
   render() {
-    console.log(this.state);
     return (
       <div className="main-container-wrapper">
         {
