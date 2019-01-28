@@ -34,7 +34,11 @@ class RankList extends Component {
             this.state.rankList.map(item =>
               <li key={item.rankid}>
                 <NavLink
-                  to={'/rank/info/'+item.rankid}>
+                  to={{
+                    pathname: `/nrank/info/${item.rankid}`,
+                    title: item.rankname,
+                    hideTop: true
+                  }}>
                   <div className="rank-img-left">
                     <img src={item.imgurl} alt="" />
                   </div>

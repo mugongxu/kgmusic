@@ -4,7 +4,9 @@
 import React from 'react';
 import NewSong from '@/views/newSong/index';
 import RankList from '@/views/rank/index';
+import RankSongList from '@/views/rank/info';
 import PlistList from '@/views/plist/index';
+import SingerClass from '@/views/singer/index';
 
 const HelloWorld = () => {
   return <div>HelloWorld</div>
@@ -15,25 +17,29 @@ const navRouter = [
     path: '/',
     name: '新歌',
     component: NewSong,
-    model: 1
+    model: 1,
+    hideTop: false
   },
   {
     path: '/nrank/list',
     name: '排行',
     component: RankList,
-    model: 1
+    model: 1,
+    hideTop: false
   },
   {
     path: '/nplist/index',
     name: '歌单',
     component: PlistList,
-    model: 1
+    model: 1,
+    hideTop: false
   },
   {
     path: '/nsinger/class',
     name: '歌手',
-    component: HelloWorld,
-    model: 1
+    component: SingerClass,
+    model: 1,
+    hideTop: false
   }
 ];
 
@@ -42,32 +48,37 @@ const routeConfig = [
   {
     path: '/nrank/info/:id',
     name: '排行榜',
-    component: HelloWorld,
-    model: 2
+    component: RankSongList,
+    model: 2,
+    hideTop: true
   },
   {
     path: '/nplist/list/:id',
     name: '歌单',
     component: HelloWorld,
-    model: 2
+    model: 2,
+    hideTop: true
   },
   {
     path: '/nsinger/list/:id',
     name: '歌手列表',
     component: HelloWorld,
-    model: 2
+    model: 2,
+    hideTop: false
   },
   {
     path: '/nsinger/info/:id',
     name: '歌手信息',
     component: HelloWorld,
-    model: 2
+    model: 2,
+    hideTop: true
   },
   {
     path: '/nsearch/index',
     name: '搜索',
     component: HelloWorld,
-    model: 2
+    model: 2,
+    hideTop: true
   }
 ];
 

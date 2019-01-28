@@ -26,9 +26,21 @@ const HeaderNav = () => {
   );
 };
 
-const HeaderGoBack = () => {
+const HeaderGoBack = (props) => {
+  console.log(props);
+  const goBack = () => {
+    props.history.goBack();
+  };
+
+  let className = props.location.hideTop ? 'header-goback' : 'header-goback header-doback-bg';
+  
   return (
-    <div className="header-goback">1</div>
+    <div className={className}>
+      <p className="page-title">{props.location.title}</p>
+      <div className="goback" onClick={goBack}>
+        <i></i>
+      </div>
+    </div>
   );
 };
 

@@ -71,4 +71,46 @@
       }
     }
   }
+  .header-goback {
+    width: 100%;
+    line-height: 3rem;
+    background: -webkit-linear-gradient(top,rgba(0,0,0,.6),rgba(0,0,0,0));
+    padding: 0 2.1429rem;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    &.header-doback-bg {
+      box-shadow: 0 0.1785rem 0.1785rem 0 #f4f4f4;
+      color: #333;
+      background: #fff;
+      .goback i {
+        background: url(../img/arrow-left.png) no-repeat center;
+        background-size: 100%;
+      }
+    }
+    .page-title {
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 1rem;
+    }
+    .goback {
+      width: 2.1429rem;
+      height: 2.8031rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      cursor: pointer;
+      i {
+        width: .85714rem;
+        height: 1.42857rem;
+        margin-top: .687265rem;
+        display: inline-block;
+        background: url(../img/arrow-left.png) no-repeat center;
+        background-size: 100%;
+      }
+    }
+  }
 }

@@ -15,7 +15,7 @@ class MainContainer extends Component {
           routeConfig.map(item => {
             const Component = item.component;
             const style = {
-              marginTop: item.model === 1 ? '6.4286rem' : '3.2143rem'
+              marginTop: item.hideTop ? '3.4286rem' : '6.67rem'
             };
             return (
               <Route

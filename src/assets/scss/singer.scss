@@ -1,0 +1,30 @@
+.singer-class-list-wrapper {
+  overflow: hidden;
+  .singer-class-list {
+    margin: 1rem .7143rem 1.0714rem .7143rem;
+    background: #fbfbfb;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    li {
+      border-top: 1px solid #e4e4e4;
+      &:first-child {
+        border-top: none;
+      }
+      a {
+        padding: .7143rem;
+        display: block;
+        font-size: 1rem;
+        color: #333;
+        .singer-list-arrow {
+          width: .57143rem;
+          height: 1rem;
+          margin-top: .2rem;
+          background: url(../img/arrow-right.png) no-repeat;
+          background-size: 100%;
+          float: right;
+          display: block;
+        }
+      }
+    }
+  }
+}
