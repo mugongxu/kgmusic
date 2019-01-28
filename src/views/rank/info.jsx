@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ajax } from '@/utils';
+import { format } from 'date-fns';
 import '@/assets/scss/rank.scss';
 
 class RankSongList extends Component {
@@ -43,10 +44,13 @@ class RankSongList extends Component {
         <div className="rank-info-hd">
           <img src={this.state.bannerurl} alt=""/>
           <div className="rank-info-time">
-            <span>{this.state.timestamp}</span>
+            <span>上次更新时间：{format(this.state.timestamp * 1000, 'YYYY-MM-DD')}</span>
           </div>
         </div>
         <ul className="rank-img-list">
+          <div></div>
+          <div></div>
+          <span></span>
         </ul>
       </div>
     );

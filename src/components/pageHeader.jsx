@@ -31,12 +31,22 @@ const HeaderGoBack = (props) => {
   const goBack = () => {
     props.history.goBack();
   };
+  // 路由匹配
+  const path = props.match.path;
+  let hideTop = false;
+  let title = '';
+  routeConfig.forEach(item => {
+    if (item.path === path) {
+      title = item.name;
+      hideTop = item.hideTop;
+    }
+  });
 
-  let className = props.location.hideTop ? 'header-goback' : 'header-goback header-doback-bg';
+  let className = hideTop ? 'header-goback' : 'header-goback header-doback-bg';
   
   return (
     <div className={className}>
-      <p className="page-title">{props.location.title}</p>
+      <p className="page-title">{props.location.title||title}</p>
       <div className="goback" onClick={goBack}>
         <i></i>
       </div>
