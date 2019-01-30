@@ -1,39 +1,37 @@
 import React, { Component } from 'react';
 import SongsList from '#/common/songsList';
 import { ajax } from '@/utils';
-import { format } from 'date-fns';
-import '@/assets/scss/rank.scss';
+import '@/assets/scss/plist.scss';
 
-class RankSongList extends Component {
+class PlistSongList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rankid: props.match.params.id,
+      specialid: props.match.params.id,
       bannerurl: '',
       songList: [],
-      timestamp: 0
+      plistInfo: {}
     };
   }
 
   async componentDidMount() {
-    const response = await ajax.get('/rank/info/', {
+    const response = await ajax.get(`/plist/list/${this.state.specialid}`, {
       params: {
-        rankid: this.state.rankid,
-        page: 1,
+        specialid: this.state.specialid,
         json: true
       }
     });
     const data = response.data;
-    let songList = data.songs.list || [];
-    let timestamp = data.songs.timestamp || 0;
+    let songList = data.list.list.info || [];
+    let plistInfo = data.info.list || {};
     // 转化尺寸
-    let bannerurl = data.info.banner7url;
+    let bannerurl = plistInfo.imgurl;
     bannerurl = bannerurl.replace('{size}', '400');
     // 保存
     this.setState({
       bannerurl,
       songList: [...songList],
-      timestamp
+      plistInfo: { ...plistInfo }
     });
   }
 
@@ -42,9 +40,6 @@ class RankSongList extends Component {
       <div className="rank-info-wrapper">
         <div className="rank-info-hd">
           <img src={this.state.bannerurl} alt=""/>
-          <div className="rank-info-time">
-            <span>上次更新时间：{format(this.state.timestamp * 1000, 'YYYY-MM-DD')}</span>
-          </div>
         </div>
         <SongsList
           rank={true}
@@ -54,4 +49,4 @@ class RankSongList extends Component {
   }
 }
 
-export default RankSongList;
+export default PlistSongList;

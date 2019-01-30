@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SongsList from '#/common/songsList';
 import { ajax } from '@/utils';
 import Swiper from '@/plugins/swiper/custom';
 import '@/assets/scss/newSong.scss';
@@ -54,20 +55,8 @@ class NewSong extends Component {
         <div className="card-swipe">
           <SwiperPage bannerList={this.state.bannerList} />
         </div>
-        <ul className="new-songslist">
-          {
-            this.state.recommend.map((item, index) => 
-              <li key={index} className="new-songslist-item">
-                <div className="new-songs-item-name">
-                  <span>{item.filename}</span>
-                </div>
-                <div className="new-songs-item-download">
-                  <i></i>
-                </div>
-              </li>
-            )
-          }
-        </ul>
+        <SongsList
+          songsList={this.state.recommend} />
       </div>
     );
   }

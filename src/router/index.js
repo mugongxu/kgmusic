@@ -6,7 +6,10 @@ import NewSong from '@/views/newSong/index';
 import RankList from '@/views/rank/index';
 import RankSongList from '@/views/rank/info';
 import PlistList from '@/views/plist/index';
+import PlistSongList from '@/views/plist/info';
 import SingerClass from '@/views/singer/index';
+import SingerList from '@/views/singer/list';
+import SingerSongList from '@/views/singer/info';
 
 const HelloWorld = () => {
   return <div>HelloWorld</div>
@@ -55,21 +58,21 @@ const routeConfig = [
   {
     path: '/nplist/list/:id',
     name: '歌单',
-    component: HelloWorld,
+    component: PlistSongList,
     model: 2,
     hideTop: true
   },
   {
     path: '/nsinger/list/:id',
     name: '歌手列表',
-    component: HelloWorld,
+    component: SingerList,
     model: 2,
     hideTop: false
   },
   {
     path: '/nsinger/info/:id',
     name: '歌手信息',
-    component: HelloWorld,
+    component: SingerSongList,
     model: 2,
     hideTop: true
   },

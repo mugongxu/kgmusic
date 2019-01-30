@@ -78,7 +78,10 @@ class PlistList extends Component {
             this.state.plistList.map((item, index) =>
               <li key={index}>
                 <NavLink
-                  to={'/nplist/list/'+item.specialid}>
+                  to={{
+                    pathname: `/nplist/list/${item.specialid}`,
+                    title: item.specialname
+                  }}>
                   <div className="plist-img-left">
                     <img src={item.imgurl} alt="" />
                   </div>

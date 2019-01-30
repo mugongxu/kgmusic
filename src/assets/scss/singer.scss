@@ -28,3 +28,79 @@
     }
   }
 }
+
+.singer-list-wrapper {
+  .singer-img-list li a {
+    display: block;
+    position: relative;
+    margin-left: .7143rem;
+    padding: .7143rem 2.14286rem .7143rem 5.4286rem;
+    border-bottom: 1px solid #e5e5e5;
+    .singer-img-left {
+      position: absolute;
+      top: .7143rem;
+      left: 0;
+      width: 4.3751rem;
+      height: 4.3751rem;
+      img {
+        width: 100%;
+      }
+    }
+    .singer-img-content {
+      min-height: 4.3751rem;
+      line-height: 4.3751rem;
+      display: block;
+      font-size: 1.0714rem;
+      color: #333;
+    }
+    .singer-img-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2.14286rem;
+      height: 100%;
+      text-align: center;
+      display: block;
+      .singer-img-arrow {
+        width: .57143rem;
+        height: 1rem;
+        margin-top: -.5rem;
+        position: absolute;
+        top: 50%;
+        right: .7143rem;
+        display: block;
+        background: url(../img/arrow-right.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+// 具体排行榜
+.singer-info-wrapper {
+  .singer-info-hd {
+    width: 100%;
+    height: 12.5rem;
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      margin-top: -5.3571rem;
+    }
+    .singer-info-time {
+      width: 100%;
+      height: 2.8rem;
+      background: -webkit-linear-gradient(bottom,rgba(0,0,0,.6),rgba(0,0,0,0));
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      span {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 1.07143rem;
+        color: #fafff2;
+        font-size: .85714rem;
+      }
+    }
+  }
+}

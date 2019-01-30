@@ -46,7 +46,7 @@ const HeaderGoBack = (props) => {
   
   return (
     <div className={className}>
-      <p className="page-title">{props.location.title||title}</p>
+      <p className="page-title" id="page-title">{props.location.title||title}</p>
       <div className="goback" onClick={goBack}>
         <i></i>
       </div>
