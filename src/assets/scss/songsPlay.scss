@@ -9,5 +9,268 @@
     color: #fff;
     font-size: 0;
     display: none;
+    .ft-go-info {
+      width: 65%;
+      display: block;
+    }
+    .ft-center, .ft-left {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .ft-left {
+      width: 3.75rem;
+      height: 3.75rem;
+      margin: .2143rem .535rem .2143rem .2143rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+    .ft-center {
+      width: 65%;
+      .ft-desc {
+        width: 100%;
+        line-height: 1.7;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: .8571rem;
+        color: #fff;
+      }
+      .ft-sub-desc {
+        line-height: 1.3;
+        font-size: .7143rem;
+        color: #888;
+      }
+    }
+    .ft-right {
+      position: absolute;
+      top: 1.0714rem;
+      right: .7143rem;
+      .btn-loading, .btn-next, .btn-pause, .btn-play, .ft-icon-download {
+        width: 1.786rem;
+        height: 1.786rem;
+        margin-left: 1rem;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .btn-pause {
+        background: url(../img/pause-icon.png) no-repeat;
+        background-size: 100%
+      }
+      .btn-play {
+        background: url(../img/play-icon.png) no-repeat;
+        background-size: 100%;
+      }
+      .btn-next {
+        background: url(../img/next-icon.png) no-repeat;
+        background-size: 100%;
+      }
+      .ft-icon-download {
+        background: url(../img/download-icon.png) no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+  .panel-play {
+    position: fixed;
+    top: 3.2143rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #ffffff;
+    display: none;
+    z-index: 1000;
+    .top-fixes {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      line-height: 3rem;
+      background: -webkit-linear-gradient(top,rgba(0,0,0,.6),rgba(0,0,0,0));
+      padding: 0 2.1429rem;
+      text-align: center;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      z-index: 99;
+      .title {
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 1rem;
+      }
+      .goback {
+        width: 2.1429rem;
+        height: 2.8031rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        cursor: pointer;
+        i {
+          width: .85714rem;
+          height: 1.42857rem;
+          margin-top: .687265rem;
+          display: inline-block;
+          background: url(../img/arrow-left.png) no-repeat center;
+          background-size: 100%;
+        }
+      }
+    }
+    .bg-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../img/logo-octocat.png) no-repeat center center;
+      background-size: cover;
+      -webkit-filter: blur(15px);
+      filter: blur(15px);
+    }
+    .play-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,.6);
+    }
+    .panel-play-bd {
+      width: 100%;
+      height: 100%;
+      padding-top: 6.0174rem;
+      padding-bottom: 2.5rem;
+      position: relative;
+      overflow: auto;
+      .panel-play-img-box {
+        width: 10.7143rem;
+        height: 10.7143rem;
+        margin: 1.4286rem auto 0;
+        img {
+          width: 100%;
+        }
+      }
+      .panel-play-lrc-box {
+        margin-top: .8928rem;
+        height: 3.8rem;
+        overflow: hidden;
+        text-align: center;
+        color: #afabac;
+        .panel-play-lrc {
+          height: 3.8rem;
+          overflow: hidden;
+          p {
+            width: 100%;
+            height: 1.7857rem;
+            line-height: 1.7857rem;
+            vertical-align: top;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: .8571rem;
+            &.current {
+              color: #d1c90e;
+            }
+          }
+        }
+      }
+      .play-operate {
+        margin: 0 auto;
+        font-size: 0;
+        text-align: center;
+        .btn-download, .btn-next, .btn-prev {
+          width: 2.3214rem;
+          height: 2.4rem;
+          margin: 0 .8929rem;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .btn-loading, .btn-pause, .btn-play {
+          width: 3.2143rem;
+          height: 3.2143rem;
+          margin: 0 .8929rem;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .btn-prev {
+          background: url(../img/play-prev.png) no-repeat;
+          background-size: 100%;
+        }
+        .btn-play {
+          background: url(../img/play-play.png) no-repeat;
+          background-size: 100%;
+        }
+        .btn-pause {
+          background: url(../img/play-pause.png) no-repeat;
+          background-size: 100%;
+        }
+        .btn-next {
+          background: url(../img/play-next.png) no-repeat;
+          background-size: 100%;
+        }
+      }
+      .time-wrap {
+        width: 100%;
+        padding: .8928rem .7143rem;
+        display: flex;
+        display: -webkit-flex;
+        -webkit-flex: 1;
+        -webkit-align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-sizing: border-box;
+        flex: 1;
+        align-items: center;
+        box-orient: horizontal;
+        box-sizing: border-box;
+        .time, .timeshow {
+          font-size: .6428rem;
+          color: #dcdcdc;
+        }
+        .progress-wrap {
+          height: .1785rem;
+          margin: 0 .5357rem;
+          background: #232228;
+          position: relative;
+          flex: 1;
+          -webkit-flex: 1;
+          z-index: 100;
+          .progress-bar {
+            width: 100%;
+            height: 100%;
+          }
+          .preview-progress, .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 100%;
+          }
+          .preview-progress {
+            background: #6c6b70;
+          }
+          .progress {
+            background: #3195fd;
+            span {
+              position: absolute;
+              top: 50%;
+              right: -.4rem;
+              margin-top: -.3572rem;
+              width: .7143rem;
+              height: .7143rem;
+              display: block;
+              background: #3195fd;
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .player {
+    display: none;
   }
 }

@@ -11,8 +11,8 @@ class SongsList extends Component {
     this.playBox = React.createRef();
   }
 
-  playSongs(item, e) {
-    this.playBox.current.showFtPlayer(item);
+  playSongs(index, e) {
+    this.playBox.current.showFtPlayer(this.props.songsList, index);
   }
 
   render() {
@@ -22,7 +22,7 @@ class SongsList extends Component {
         <ul className={this.state.rank ? 'songslist rank-songsList' : 'songslist'}>
           {
             this.props.songsList.map((item, index) =>
-              <li key={index} className="songslist-item" onClick={this.playSongs.bind(this, item)}>
+              <li key={index} className="songslist-item" onClick={this.playSongs.bind(this, index)}>
                 <div className="songs-item-name">
                   <span>{item.filename}</span>
                 </div>
