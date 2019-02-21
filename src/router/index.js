@@ -10,6 +10,7 @@ import PlistSongList from '@/views/plist/info';
 import SingerClass from '@/views/singer/index';
 import SingerList from '@/views/singer/list';
 import SingerSongList from '@/views/singer/info';
+import Search from '@/views/search/index';
 
 const HelloWorld = () => {
   return <div>HelloWorld</div>
@@ -79,9 +80,9 @@ const routeConfig = [
   {
     path: '/nsearch/index',
     name: '搜索',
-    component: HelloWorld,
+    component: Search,
     model: 2,
-    hideTop: true
+    hideTop: false
   }
 ];
 

@@ -20,7 +20,9 @@ class SongsPlay extends Component {
     };
     this.ftPlayer = React.createRef();
     this.panelPlay = React.createRef();
+    this.panelPlayLrc = React.createRef();
     this.songTimer = null;
+    this.currentIndex = 0;
     // 事件绑定
     this.pauseSong = this.pauseSong.bind(this);
     this.nextSong = this.nextSong.bind(this);
@@ -47,6 +49,7 @@ class SongsPlay extends Component {
   
   // 获取歌曲信息
   async getSongInfo() {
+    this.currentIndex = 0;
     let item = this.state.songsList[this.state.index];
     this.ftPlayer.current.style.display = 'block';
     const hash = item.hash;
@@ -150,6 +153,10 @@ class SongsPlay extends Component {
         duration: duration,
         currentTimeStr: utils.secondTommss(currentTime),
         durationStr: utils.secondTommss(duration)
+      }, () => {
+        this.panelPlayLrc.current.scrollTop = this.currentIndex
+          ? ((this.currentIndex - 1) * 1.7857 * 16)
+          : 0;
       });
     });
   }
@@ -208,11 +215,19 @@ class SongsPlay extends Component {
                 alt="" />
             </div>
             <div className="panel-play-lrc-box">
-              <div className="panel-play-lrc">
+              <div className="panel-play-lrc" ref={this.panelPlayLrc}>
                 {
-                  this.state.lyricsList.map((item, index) =>
-                    <p key={index}>{item.lyrics}</p>
-                  )
+                  this.state.lyricsList.map((item, index) => {
+                    let className = '';
+                    let timestamp = item.timestamp;
+                    let currentTime = this.state.currentTime;
+                    let nextTimestamp = this.state.lyricsList[index + 1] ? this.state.lyricsList[index + 1].timestamp : this.state.duration;
+                    if (currentTime >= timestamp && currentTime < nextTimestamp) {
+                      className = 'current';
+                      this.currentIndex = index;
+                    }
+                    return (<p key={index} className={className}>{item.lyrics}</p>);
+                  })
                 }
               </div>
             </div>
