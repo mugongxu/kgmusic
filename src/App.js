@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PageHeader from '#/pageHeader';
 import MainContainer from '#/mainContainer';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -16,12 +16,12 @@ class App extends Component {
   render() {
     
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="App">
           <PageHeader />
           <MainContainer />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
