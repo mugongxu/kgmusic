@@ -12,10 +12,6 @@ import SingerList from '@/views/singer/list';
 import SingerSongList from '@/views/singer/info';
 import Search from '@/views/search/index';
 
-const HelloWorld = () => {
-  return <div>HelloWorld</div>
-};
-
 const navRouter = [
   {
     path: '/',
