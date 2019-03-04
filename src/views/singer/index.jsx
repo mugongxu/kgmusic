@@ -34,7 +34,7 @@ class SingerClass extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get('/singer/class&json=true');
+    const response = await ajax.get('/km/singer/class');
     const data = response.data;
     let classList = data.list;
     let newClassList = [];

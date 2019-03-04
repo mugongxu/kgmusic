@@ -13,7 +13,7 @@ class SingerList extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get(`/singer/list/${this.state.classid}`, {
+    const response = await ajax.get(`/km/singer/list/`, {
       params: {
         classid: this.state.classid,
         json: true

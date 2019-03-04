@@ -27,7 +27,7 @@ class SingerSongList extends Component {
   }
 
   async getSongsList() {
-    const response = await ajax.get(`/singer/info/${this.state.singerid}`, {
+    const response = await ajax.get(`/km/singer/info`, {
       params: {
         singerid: this.state.singerid,
         json: true,

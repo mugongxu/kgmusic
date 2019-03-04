@@ -12,7 +12,7 @@ class RankList extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get('/rank/list&json=true');
+    const response = await ajax.get('/km/rank/list');
     const data = response.data;
     let rankList = data.rank.list || [];
     // 转化尺寸

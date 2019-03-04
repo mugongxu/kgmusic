@@ -57,7 +57,7 @@ class SongsPlay extends Component {
       hash: hash
     });
     // 数据请求
-    const response = await ajax.get('/yy/index.php', {
+    const response = await ajax.get('/km/song/detail', {
       params: {
         r: 'play/getdata',
         hash: hash

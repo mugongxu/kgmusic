@@ -24,7 +24,7 @@ class PlistList extends Component {
   }
 
   async getPlistList() {
-    const response = await ajax.get('/plist/index&json=true', {
+    const response = await ajax.get('/km/plist/index', {
       params: {
         page: this.state.page
       }

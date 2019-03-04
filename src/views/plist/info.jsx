@@ -15,7 +15,7 @@ class PlistSongList extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get(`/plist/list/${this.state.specialid}`, {
+    const response = await ajax.get(`/km/plist/list`, {
       params: {
         specialid: this.state.specialid,
         json: true

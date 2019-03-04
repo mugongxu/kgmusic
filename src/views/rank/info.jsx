@@ -16,7 +16,7 @@ class RankSongList extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get('/rank/info/', {
+    const response = await ajax.get('/km/rank/info', {
       params: {
         rankid: this.state.rankid,
         page: 1,
