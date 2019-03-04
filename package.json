@@ -119,12 +119,9 @@
       "target": "http://m.kugou.com/?json=true",
       "changeOrigin": true
     },
-    "/kg": {
-      "target": "http://m.kugou.com",
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^kg": ""
-      }
+    "/km": {
+      "target": "http://127.0.0.1:13770",
+      "changeOrigin": true
     },
     "/plist": {
       "target": "http://m.kugou.com",

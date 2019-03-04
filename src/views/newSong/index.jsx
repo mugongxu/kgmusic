@@ -40,7 +40,7 @@ class NewSong extends Component {
   }
 
   async componentDidMount() {
-    const response = await ajax.get('/banner');
+    const response = await ajax.get('/km/banner');
     const data = response.data;
     this.setState({
       bannerList: [...data.banner],
