@@ -35,10 +35,10 @@ class SingerSongList extends Component {
       }
     });
     const data = response.data;
-    let songList = data.songs.list || [];
+    let songList = (data.songs || {}).list || [];
     let singerInfo = data.info || {};
     // 转化尺寸
-    let bannerurl = singerInfo.imgurl;
+    let bannerurl = singerInfo.imgurl || '';
     bannerurl = bannerurl.replace('{size}', '400');
     // 数据合并
     const concatArr = [...this.state.songList, ...songList]

@@ -13,7 +13,7 @@ class Search extends Component {
 
   async componentDidMount() {
     // 获取热搜列表
-    const response = await ajax.get('/api/v3/search/hot', {
+    const response = await ajax.get('/km/search/hot', {
       params: {
         format: 'json',
         plat: 0,

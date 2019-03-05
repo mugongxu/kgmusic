@@ -115,36 +115,8 @@
     ]
   },
   "proxy": {
-    "/banner": {
-      "target": "http://m.kugou.com/?json=true",
-      "changeOrigin": true
-    },
     "/km": {
       "target": "http://127.0.0.1:13770",
-      "changeOrigin": true
-    },
-    "/plist": {
-      "target": "http://m.kugou.com",
-      "changeOrigin": true
-    },
-    "/rank": {
-      "target": "http://m.kugou.com",
-      "changeOrigin": true
-    },
-    "/singer": {
-      "target": "http://m.kugou.com",
-      "changeOrigin": true
-    },
-    "/app": {
-      "target": "http://m.kugou.com",
-      "changeOrigin": true
-    },
-    "/yy": {
-      "target": "http://www.kugou.com",
-      "changeOrigin": true
-    },
-    "/api": {
-      "target": "http://mobilecdn.kugou.com",
       "changeOrigin": true
     }
   },
