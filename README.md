@@ -52,7 +52,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
  2、或者不使用node接口处理，直接使用前端webpack代理
  
  
- 注意：由于酷狗接口后台对接口请求域名做了权限验证，该项目只适用于本地练习开发，部署到线上，会出现接口获取不到数据 [线上查看](http://m.mugongxu.com/)
+ 注意：由于酷狗接口后台对接口请求域名做了权限验证，该项目只适用于本地练习开发，部署到线上，会出现接口获取不到数据 [线上查看](http://m.xuguoqian.com/)
  
  最终效果：
 ![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105013.jpg)
