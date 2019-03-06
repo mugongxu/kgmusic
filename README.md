@@ -33,7 +33,10 @@ You can find the most recent version of this guide [here](https://github.com/fac
   	npm run start
 
 该项目是借助酷狗音乐接口实现的移动端音乐播放前端项目
-技术栈：react react-router webpack eslint nodeJS
+
+技术栈：
+
+ 	react react-router webpack eslint nodeJS
 
 接口代理：
 1、由nodeJS写后端接口（即对酷狗接口进行自己封装）=》接口服务可查看kgmusic-server项目；
