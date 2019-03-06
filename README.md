@@ -53,3 +53,20 @@ You can find the most recent version of this guide [here](https://github.com/fac
  
  
  最终效果：
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105013.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105043.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105056.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105109.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105150.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105204.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105223.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105230.jpg)
+
+![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105239.jpg)
