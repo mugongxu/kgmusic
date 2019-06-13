@@ -50,6 +50,41 @@ You can find the most recent version of this guide [here](https://github.com/fac
       	},
 	
  2、或者不使用node接口处理，直接使用前端webpack代理
+   
+   	"proxy": {
+    "/banner": {
+      "target": "http://m.kugou.com/?json=true",
+      "changeOrigin": true
+    },
+    "/km": {
+      "target": "http://127.0.0.1:13770",
+      "changeOrigin": true
+    },
+    "/plist": {
+      "target": "http://m.kugou.com",
+      "changeOrigin": true
+    },
+    "/rank": {
+      "target": "http://m.kugou.com",
+      "changeOrigin": true
+    },
+    "/singer": {
+      "target": "http://m.kugou.com",
+      "changeOrigin": true
+    },
+    "/app": {
+      "target": "http://m.kugou.com",
+      "changeOrigin": true
+    },
+    "/yy": {
+      "target": "http://www.kugou.com",
+      "changeOrigin": true
+    },
+    "/api": {
+      "target": "http://mobilecdn.kugou.com",
+      "changeOrigin": true
+    }
+  },
  
  
  注意：由于酷狗接口后台对接口请求域名做了权限验证，该项目只适用于本地练习开发，部署到线上，会出现接口获取不到数据 [线上查看](http://m.xuguoqian.com/)
