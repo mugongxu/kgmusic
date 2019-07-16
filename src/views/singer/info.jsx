@@ -34,7 +34,7 @@ class SingerSongList extends Component {
         page: this.state.page
       }
     });
-    const data = response.data;
+    const data = response.data || {};
     let songList = (data.songs || {}).list || [];
     let singerInfo = data.info || {};
     // 转化尺寸
@@ -47,8 +47,8 @@ class SingerSongList extends Component {
       bannerurl,
       songList: [...concatArr],
       singerInfo: { ...singerInfo },
-      total: data.songs.total,
-      pagesize: data.songs.pagesize
+      total: (data.songs || {}).total,
+      pagesize: (data.songs || {}).pagesize
     });
   }
 
