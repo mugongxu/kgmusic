@@ -14,7 +14,7 @@ class RankList extends Component {
   async componentDidMount() {
     const response = await ajax.get('/km/rank/list');
     const data = response.data;
-    let rankList = data.rank.list || [];
+    let rankList = data.list || [];
     // 转化尺寸
     rankList = rankList.map(item => {
       item.imgurl = item.imgurl.replace('{size}', '400');

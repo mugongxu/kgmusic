@@ -41,11 +41,10 @@ class NewSong extends Component {
 
   async componentDidMount() {
     const response = await ajax.get('/km/banner');
-    // const response = await ajax.get('http://m.kugou.com/?json=true');
     const data = response.data;
     this.setState({
-      bannerList: [...data.banner],
-      recommend: [...data.data]
+      bannerList: [...(data.banner || [])],
+      recommend: [...(data.data || [])]
     });
   }
 

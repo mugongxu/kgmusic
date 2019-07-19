@@ -16,12 +16,14 @@ ajax.interceptors.request.use((config) => {
 ajax.interceptors.response.use((response) => {
   // 在这里可以对返回做统一错误拦截
   if (response.status !== 200) {
-    Promise.reject(`Http 状态异常 ${response.status}`);
+    return Promise.reject(`Http 状态异常 ${response.status}`);
   }
-  return response;
+  if (response.data.status !== 0) {
+    return Promise.reject(response.data.errorMessage);
+  }
+  return response.data;
 }, (error) => {
-  Promise.reject(error);
-  throw error;
+  return Promise.reject(error);
 });
 
 export default ajax;
