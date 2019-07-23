@@ -30,8 +30,7 @@ class PlistList extends Component {
       }
     });
     const data = response.data;
-    const plist =  data.plist;
-    let plistList = plist.list.info || [];
+    let plistList = data.list || [];
     // 转化尺寸
     plistList = plistList.map(item => {
       item.imgurl = item.imgurl.replace('{size}', '400');
@@ -42,8 +41,8 @@ class PlistList extends Component {
     // 保存数据
     this.setState({
       plistList: [...concatArr],
-      total: plist.list.total,
-      pagesize: plist.pagesize
+      total: data.total,
+      pagesize: data.pagesize
     });
   }
 

@@ -22,8 +22,8 @@ class PlistSongList extends Component {
       }
     });
     const data = response.data;
-    let songList = data.list.list.info || [];
-    let plistInfo = data.info.list || {};
+    let songList = data.list || [];
+    let plistInfo = data.info || {};
     // 转化尺寸
     let bannerurl = plistInfo.imgurl;
     bannerurl = bannerurl.replace('{size}', '400');

@@ -8,7 +8,7 @@ class RankSongList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rankid: props.match.params.id,
+      rankId: props.match.params.id,
       bannerurl: '',
       songList: [],
       timestamp: 0
@@ -18,14 +18,14 @@ class RankSongList extends Component {
   async componentDidMount() {
     const response = await ajax.get('/km/rank/info', {
       params: {
-        rankid: this.state.rankid,
+        rankId: this.state.rankId,
         page: 1,
         json: true
       }
     });
     const data = response.data;
-    let songList = data.songs.list || [];
-    let timestamp = data.songs.timestamp || 0;
+    let songList = data.list || [];
+    let timestamp = data.info.timestamp || 0;
     // 转化尺寸
     let bannerurl = data.info.banner7url;
     bannerurl = bannerurl.replace('{size}', '400');

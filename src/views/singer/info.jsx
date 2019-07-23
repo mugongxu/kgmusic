@@ -29,13 +29,13 @@ class SingerSongList extends Component {
   async getSongsList() {
     const response = await ajax.get(`/km/singer/info`, {
       params: {
-        singerid: this.state.singerid,
+        singerId: this.state.singerid,
         json: true,
         page: this.state.page
       }
     });
     const data = response.data || {};
-    let songList = (data.songs || {}).list || [];
+    let songList = data.list || [];
     let singerInfo = data.info || {};
     // 转化尺寸
     let bannerurl = singerInfo.imgurl || '';
@@ -47,8 +47,8 @@ class SingerSongList extends Component {
       bannerurl,
       songList: [...concatArr],
       singerInfo: { ...singerInfo },
-      total: (data.songs || {}).total,
-      pagesize: (data.songs || {}).pagesize
+      total: data.total,
+      pagesize: data.pageSize
     });
   }
 

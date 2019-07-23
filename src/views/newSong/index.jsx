@@ -44,7 +44,7 @@ class NewSong extends Component {
     const data = response.data;
     this.setState({
       bannerList: [...(data.banner || [])],
-      recommend: [...(data.data || [])]
+      recommend: [...(data.list || [])]
     });
   }
 

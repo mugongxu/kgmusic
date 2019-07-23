@@ -15,12 +15,12 @@ class SingerList extends Component {
   async componentDidMount() {
     const response = await ajax.get(`/km/singer/list/`, {
       params: {
-        classid: this.state.classid,
+        classId: this.state.classid,
         json: true
       }
     });
     const data = response.data;
-    let singerList = data.singers.list.info || [];
+    let singerList = data.list || [];
     // 转化尺寸
     singerList = singerList.map(item => {
       item.imgurl = item.imgurl.replace('{size}', '400');
@@ -41,15 +41,15 @@ class SingerList extends Component {
               <li key={index}>
                 <NavLink
                   to={{
-                    pathname: `/nsinger/info/${item.singerid}`,
-                    title: item.singername,
+                    pathname: `/nsinger/info/${item.singerId}`,
+                    title: item.singerName,
                     hideTop: true
                   }}>
                   <div className="singer-img-left">
                     <img src={item.imgurl} alt="" />
                   </div>
                   <div className="singer-img-content">
-                    <p>{item.singername}</p>
+                    <p>{item.singerName}</p>
                   </div>
                   <div className="singer-img-right">
                     <i className="singer-img-arrow"></i>
