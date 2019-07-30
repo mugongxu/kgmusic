@@ -20,12 +20,14 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 3、配置服务器部署位置
 
+ ``````json  
     // 配置服务器部署路径 package.json
     "name": "react-app",
     "version": "0.1.0",
     "private": true,
     // "homepage": "/newui", // 实现二级目录部署
     "dependencies": {....
+``````
 
 项目启动：
 
@@ -40,14 +42,16 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 接口代理：
 1、由nodeJS写后端接口（即对酷狗接口进行自己封装）=》接口服务可查看kgmusic-server项目；
-	
-	前端配置：package.json
-     	"proxy": {
-           	"/km": {
-          		"target": "http://127.0.0.1:13770",
+
+``````json
+// 前端配置：package.json
+"proxy": {
+ 	"/km": {
+        	"target": "http://127.0.0.1:13770",
          	 	"changeOrigin": true
-        	}
-      	},
+        }
+},
+``````
 	
  2、或者不使用node接口处理，直接使用前端webpack代理(已废弃，新处理为kgmusic-crawl项目爬取数据，kgmusic-server项目提供接口)
  
