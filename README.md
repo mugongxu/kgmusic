@@ -49,9 +49,11 @@ You can find the most recent version of this guide [here](https://github.com/fac
         	}
       	},
 	
- 2、或者不使用node接口处理，直接使用前端webpack代理
-   
-   	"proxy": {
+ 2、或者不使用node接口处理，直接使用前端webpack代理(已废弃，新处理为kgmusic-crawl项目爬取数据，kgmusic-server项目提供接口)
+ 
+ ``````json
+  // 已废弃
+  "proxy": {
     "/banner": {
       "target": "http://m.kugou.com/?json=true",
       "changeOrigin": true
@@ -85,9 +87,42 @@ You can find the most recent version of this guide [here](https://github.com/fac
       "changeOrigin": true
     }
   },
+``````
+
+3、kgmusic-server提供接口目录：
+``````js
+// 需要请求的API
+const proxy = '/km';
+const api = {
+  // 音乐新歌榜
+  banner: { url: proxy + '/banner', method: 'GET' },
+  // 音乐歌单
+  plistIndex: { url: proxy + '/plist/index', method: 'GET' },
+  // 歌单下音乐列表
+  plistList: { url: proxy + '/plist/list', method: 'GET' },
+  // 音乐排行榜
+  rankIndex: { url: proxy + '/rank/list', method: 'GET' },
+  // 排行榜歌曲列表
+  rankInfo: { url: proxy + '/rank/info', method: 'GET' },
+  // 歌手分类
+  singerClass: { url: proxy + '/singer/class', method: 'GET' },
+  // 歌手列表
+  singerList: { url: proxy + '/singer/list', method: 'GET' },
+  // 歌手信息
+  singerInfo: { url: proxy + '/singer/info', method: 'GET' },
+  // 歌曲详情
+  songInfo: { url: proxy + '/song/info', method: 'GET' },
+  // 歌曲详情 - 带歌词
+  songDetail: { url: proxy + '/song/detail', method: 'GET' },
+  // 热门搜索列表
+  hotSearch: { url: proxy + '/search/hot', method: 'GET' },
+  // 音乐搜索
+  search: { url: proxy + '/search/song', method: 'GET' }
+};
+``````
  
  
- 注意：由于酷狗接口后台对接口请求域名做了权限验证，该项目只适用于本地练习开发，部署到线上，会出现接口获取不到数据 [线上查看](http://m.xuguoqian.com/)
+ 注意：由于酷狗接口后台对接口请求域名做了权限验证，`kgmusic-crawl`项目爬取数据，`kgmusic-server`提供后端接口处理，`kgmusic`前端处理 [线上查看](http://m.xuguoqian.com/)
  
  最终效果：
 ![ad](https://github.com/mugongxu/kgmusic/blob/master/20190306105013.jpg)
