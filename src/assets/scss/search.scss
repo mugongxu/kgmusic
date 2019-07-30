@@ -1,0 +1,79 @@
+.search-box {
+    padding: .7143rem;
+    background: #fbfbfb;
+    .search-form {
+        position: relative;
+        font-size: 0;
+        .search-icon {
+            width: 1.2143rem;
+            height: 1.9285rem;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: .3714rem;
+            background: url('../img/search.png') no-repeat;
+            background-size: 100%;
+        }
+        .search-keyword {
+            width: 70%;
+            padding: .4rem .0714rem .4rem 1.7rem;
+            margin-right: 3%;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .search-btn {
+            width: 17.25%;
+            height: 2.0714rem;
+            line-height: 2.0714rem;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1rem;
+            text-align: center;
+            background: #2ba2fa;
+            color: #fff;
+            &.search-disabled-btn {
+                color: #959595;
+                background: #e5e5e5;
+            }
+        }
+    }
+}
+.hot-search {
+    .hot-search-hd {
+        height: 2.8571rem;
+        line-height: 2.8571rem;
+        padding-left: .8929rem;
+        border-bottom: 1px solid #ccc;
+        font-size: .8571rem;
+        color: #2ca3f5;
+    }
+    .hot-search-list {
+        margin-left: .7143rem;
+        overflow: hidden;
+        a {
+            height: 3.5714rem;
+            line-height: 3.5714rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: block;
+            color: #333;
+            font-size: 1.1429rem;
+            text-indent: .1786rem;
+            position: relative;
+        }
+    }
+}
+.search-result {
+    .search-result-hd {
+        height: 1.5714rem;
+        line-height: 1.5714rem;
+        background: #e6e6e6;
+        padding-left: .9rem;
+        font-size: .7857rem;
+        color: #5d5d5d;
+    }
+}

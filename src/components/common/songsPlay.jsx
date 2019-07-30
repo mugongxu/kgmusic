@@ -9,7 +9,6 @@ class SongsPlay extends Component {
       hash: '',
       songInfo: {},
       songsList: [],
-      authors: {},
       index: 0,
       pause: false,
       currentTime: 0,
@@ -59,24 +58,25 @@ class SongsPlay extends Component {
     // 数据请求
     const response = await ajax.get('/km/song/detail', {
       params: {
-        r: 'play/getdata',
         hash: hash
       }
     });
-    const data = response.data.data;
+    const data = response.data || {};
     // 不存在播放链接则播放下一个
-    if (!data.play_url) {
+    if (!data.url) {
       this.nextSong();
       return;
     }
+    data.imgUrl = data.imgUrl.replace('{size}', '400');
+    data.album_img = data.album_img.replace('{size}', '400');
     this.setState({
       songInfo: { ...data },
-      authors: { ...data.authors[0] },
       pause: false
     });
     // 自动播放音乐
     let kumaoPlayer = document.getElementById('kumao');
-    kumaoPlayer.src = data.play_url;
+    kumaoPlayer.src = data.backup_url[0] || data.url || '';
+    console.log(kumaoPlayer.src);
     kumaoPlayer.play();
     // 歌词处理
     let lyricsArr = data.lyrics.split(/\n/);
@@ -176,13 +176,13 @@ class SongsPlay extends Component {
           <div className="ft-go-info" onClick={this.showPanelPlay}>
             <div className="ft-left">
               <img
-                src={this.state.authors.avatar}
-                onError={() => this.src=this.state.songInfo.img}
+                src={this.state.songInfo.imgUrl}
+                onError={() => this.src=this.state.songInfo.album_img}
                 alt="" />
             </div>
             <div className="ft-center">
-              <p className="ft-desc">{this.state.songInfo.song_name}</p>
-              <p className="ft-sub-desc">{this.state.songInfo.author_name}</p>
+              <p className="ft-desc">{this.state.songInfo.filename}</p>
+              <p className="ft-sub-desc">{this.state.songInfo.singerName}</p>
             </div>
           </div>
           <div className="ft-right">
@@ -198,11 +198,11 @@ class SongsPlay extends Component {
         {/* 全屏播放 */}
         <div className="panel-play" ref={this.panelPlay}>
           <div className="bg-overlay" style={{
-            backgroundImage: `url("${this.state.authors.avatar}")`
+            backgroundImage: `url("${this.state.songInfo.album_img || this.state.songInfo.imgUrl}")`
           }}></div>
           <div className="play-overlay"></div>
           <div className="top-fixes">
-            <p className="title" id="title">{this.state.songInfo.song_name}</p>
+            <p className="title" id="title">{this.state.songInfo.filename}</p>
             <div className="goback" onClick={this.goBack}>
               <i></i>
             </div>
@@ -210,8 +210,8 @@ class SongsPlay extends Component {
           <div className="panel-play-bd">
             <div className="panel-play-img-box">
               <img
-                src={this.state.authors.avatar}
-                onError={() => this.src=this.state.songInfo.img}
+                src={this.state.songInfo.album_img}
+                onError={() => this.src=this.state.songInfo.imgUrl}
                 alt="" />
             </div>
             <div className="panel-play-lrc-box">
