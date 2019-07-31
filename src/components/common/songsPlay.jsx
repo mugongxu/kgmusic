@@ -75,7 +75,7 @@ class SongsPlay extends Component {
     });
     // 自动播放音乐
     let kumaoPlayer = document.getElementById('kumao');
-    kumaoPlayer.src = data.backup_url[0] || data.url || '';
+    kumaoPlayer.src = data.url || data.backup_url[0] || '';
     console.log(kumaoPlayer.src);
     kumaoPlayer.play();
     // 歌词处理
