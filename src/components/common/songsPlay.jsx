@@ -77,6 +77,7 @@ class SongsPlay extends Component {
     let kumaoPlayer = document.getElementById('kumao');
     kumaoPlayer.src = data.url || data.backup_url[0] || '';
     console.log(kumaoPlayer.src);
+    kumaoPlayer.load();
     kumaoPlayer.play();
     // 歌词处理
     let lyricsArr = data.lyrics.split(/\n/);
