@@ -118,6 +118,14 @@
     "/km": {
       "target": "http://127.0.0.1:13770",
       "changeOrigin": true
+    },
+    "/open/": {
+      "target": "http://fs.open.kugou.com/",
+      "changeOrigin": true
+    },
+    "/open2/": {
+      "target": "http://fs.open2.kugou.com/",
+      "changeOrigin": true
     }
   },
   "devDependencies": {
