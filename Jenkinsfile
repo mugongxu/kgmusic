@@ -49,7 +49,7 @@ node(env.CI_NODE) {
 
   try {
     env.TAG_NAME = 'v' + env.VERSION + '-' + new Date().format('yyyyMMdd-HHmm', TimeZone.getTimeZone('CTT'))
-    sh 'echo TAG_NAME=$TAG_NAME' 
+    sh 'echo TAG_NAME=$TAG_NAME'
 
     sh 'echo BRANCH_NAME=$GIT_BRANCH'
     sh 'echo BRANCH_NAME=$BRANCH_NAME'
